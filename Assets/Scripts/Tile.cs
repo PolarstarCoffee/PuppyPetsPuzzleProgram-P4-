@@ -61,14 +61,14 @@ public sealed class Tile : MonoBehaviour
         }
         else
         {
-            exclude.Add(item:this);
+            exclude.Add(this);
         }
 
 
         foreach (var neighbour in Neighbours) {
             if (neighbour == null || exclude.Contains(neighbour) || neighbour.Item != Item) continue;
 
-            result.AddRange(collection:neighbour.GetConnectedTiles(exclude));
+            result.AddRange(neighbour.GetConnectedTiles(exclude));
         }
 
         return result;

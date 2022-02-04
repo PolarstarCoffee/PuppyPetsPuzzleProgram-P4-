@@ -63,11 +63,28 @@ public sealed class Board : MonoBehaviour
         foreach (var connectedTile in Tiles[0, 0].GetConnectedTiles()) connectedTile.icon.transform.DOScale(1.25f, TweenDuration).Play();
     }
 
-
+    //class for selecting two tiles
     public async void Select(Tile tile)
     {
-        if( !_Selection.Contains(tile))_Selection.Add(tile);
+        //if( !_Selection.Contains(tile))_Selection.Add(tile);
 
+        if( !_Selection.Contains(tile))
+        {
+            //only choose another tile neighboring the first chosen tile
+            if (_Selection.Count > 0)
+            {
+                //unity does not have Array, need to use System.Array... or list.IndexOf
+                //making sure the ideex of the _Selection[0] is not -1
+                if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
+                {
+                    _Selection.Add(tile);
+                }
+            }
+            else
+            {
+                _Selection.Add(tile);
+            }
+        }
 
         if (_Selection.Count < 2) return;
 
