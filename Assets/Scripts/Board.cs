@@ -25,6 +25,12 @@ public sealed class Board : MonoBehaviour
     private const float TweenDuration = 0.25f;
     private void Awake() => Instance = this;
 
+    public int moveCount = 0; //keeps a count of the moves made, a move is when a swap happens AND a match is made
+
+    public int moveLimit = 4; // test int var for ending the game when the moveLimit is reached, is checked for after every match.
+
+    //public MoveCountScript moveDisplay; //getting the MoveCountScript 
+
     private void Start()
     {
         Tiles = new Tile[rows.Max(selector: row => row.tiles.Length), rows.Length];
@@ -96,6 +102,13 @@ public sealed class Board : MonoBehaviour
         if (CanPop())  //Checks to see if it can be "popped" 
         {
             Pop();
+
+            moveCount += 1; //adds one to the moveCount var
+
+            if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
+            {
+                Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
+            }
         }
         else
         {
