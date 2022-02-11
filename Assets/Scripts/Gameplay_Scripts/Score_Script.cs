@@ -21,9 +21,9 @@ public sealed class Score_Script : MonoBehaviour
 
             scoreText.SetText($" Score = {_score}");
 
-            if (_score >= 200)
+            if (_score == 200)
             {
-                SceneManager.LoadScene("End Scene");
+                //SceneManager.LoadScene("End Scene");
                 Debug.Log("Max Score has been reached");
             }
         }
