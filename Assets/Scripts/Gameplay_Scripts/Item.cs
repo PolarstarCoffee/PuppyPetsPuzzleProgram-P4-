@@ -7,6 +7,8 @@ public sealed class Item : ScriptableObject
 {
     public int value;
 
+    //a string for each type of icon
+    public int type;
 
     public Sprite sprite;
         

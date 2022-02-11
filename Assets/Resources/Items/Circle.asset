@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Circle
   m_EditorClassIdentifier: 
   value: 7
+  type: 2
   sprite: {fileID: 21300000, guid: b19ff71a2cdbdfe4789ddfc21a6efa29, type: 3}

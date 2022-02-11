@@ -30,6 +30,11 @@ public sealed class Board : MonoBehaviour
 
     public int moveLimit = 4; // test int var for ending the game when the moveLimit is reached, is checked for after every match.
 
+    //gets the Type of Item that was matched
+    public int matchType;
+    //getting the amount of tiles matched for the ObjectiveCounter.cs
+    public int matchAmount;
+
     //public MoveCountScript moveDisplay; //getting the MoveCountScript 
 
     private void Start()
@@ -190,6 +195,13 @@ public sealed class Board : MonoBehaviour
                 await deflateSequence.Play().AsyncWaitForCompletion();  //Waits until it's finished playing until doing it over again. 
 
                 Score_Script.instance.Score += tile.Item.value * connectedTiles.Count;
+
+                //get the Item Type which the connected tiles are
+                matchType = tile.Item.type;
+                //Debug.Log(matchType + "is the Item matched");
+
+                //getting the amount of tiles matched
+                matchAmount = connectedTiles.Count;
 
                 var inflateSequence = DOTween.Sequence();
                 foreach (var connectedTile in connectedTiles) //for each connected tile within our Pop method 
