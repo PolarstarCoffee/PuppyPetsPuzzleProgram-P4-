@@ -78,9 +78,11 @@ public sealed class Board : MonoBehaviour
     //class for selecting two tiles
     public async void Select(Tile tile)
     {
-        //if( !_Selection.Contains(tile))_Selection.Add(tile);
+        //ADD TIMER TO WAIT FOR THE TILES TO FULLY SWAP UNTILL PLAYER CAN SELECT TILES AGAIN
 
-        if( !_Selection.Contains(tile))
+        //if( !_Selection.Contains(tile))_Selection.Add(tile);
+        //Do not let player select a obstacle (tile.Item.type = 4)
+        if( !_Selection.Contains(tile) && tile.Item.type != 4)
         {
             //only choose another tile neighboring the first chosen tile
             if (_Selection.Count > 0)
@@ -91,6 +93,12 @@ public sealed class Board : MonoBehaviour
                 {
                     _Selection.Add(tile);
                 }
+                else
+                {
+                    _Selection.Clear();//clear selection, WORKS kindof, after selecting a non-neighboring tile the selection is cleared and a new tile has to be selected
+                    //ADD color to which tile is selected
+                }
+                //else to reset the player's tile selection when they click on any tile not in _Seleciton[0].Neighbours
             }
             else
             {
@@ -171,8 +179,15 @@ public sealed class Board : MonoBehaviour
     {
         for (var y = 0; y < Height; y++)
             for (var x = 0; x < Width; x++)
-                if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2) //More than or equal to two equals a match: Will change later  
-                    return true;
+                //adding an if check to make sure the connected tiles are not Type int value 4 (obstacle), EDIT only working when a match of 3 
+                //triangles is trying to be swapped, is a match of more than 4 is made it will still swap AND if a triangle is spawned to create a 3
+                //match it will still match
+                if (Tiles[x, y].Item.type != 4)
+                {
+                    if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2) // && Tiles[x, y].Item.type != 4) //More than or equal to two equals a match: Will change later  
+                        return true;
+                }
+                
         return false;
       
     }
@@ -194,6 +209,7 @@ public sealed class Board : MonoBehaviour
 
                 await deflateSequence.Play().AsyncWaitForCompletion();  //Waits until it's finished playing until doing it over again. 
 
+                //add to the score
                 Score_Script.instance.Score += tile.Item.value * connectedTiles.Count;
 
                 //get the Item Type which the connected tiles are
@@ -202,6 +218,11 @@ public sealed class Board : MonoBehaviour
 
                 //getting the amount of tiles matched
                 matchAmount = connectedTiles.Count;
+
+                //TESTING DROPPING TILES DOWN
+
+
+
 
                 var inflateSequence = DOTween.Sequence();
                 foreach (var connectedTile in connectedTiles) //for each connected tile within our Pop method 
