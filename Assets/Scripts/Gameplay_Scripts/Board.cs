@@ -58,8 +58,8 @@ public sealed class Board : MonoBehaviour
                 
                 Tiles[x, y] = tile;
 
-                //determining which item is in each tile by setting the tile.item to the item_database random pick of all items inside
-                tile.Item = Item_Database.Items[Random.Range(0, Item_Database.Items.Length)];
+                //determining which item is in each tile by setting the tile.item to the item_database random pick of all items inside (2/12/22 Edit: Excluded obstacle tile from spawning randomly)
+                tile.Item = Item_Database.Items[Random.Range(0, 3)];
 
 
                 //try implemementing specific placement of tiles
@@ -103,7 +103,7 @@ public sealed class Board : MonoBehaviour
             if (_Selection.Count > 0)
             {
                 //unity does not have Array, need to use System.Array... or list.IndexOf
-                //making sure the ideex of the _Selection[0] is not -1
+                //making sure the index of the _Selection[0] is not -1
                 if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
                 {
                     _Selection.Add(tile);
@@ -137,7 +137,7 @@ public sealed class Board : MonoBehaviour
             if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
             {
                 Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
-                SceneManager.LoadScene("End Scene"); //Boots player to end scene on moveCount Limit reached 
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
             }
            
         }
@@ -158,7 +158,7 @@ public sealed class Board : MonoBehaviour
 
 
 
-    public async Task Swap(Tile tile1, Tile tile2)
+    public async Task Swap(Tile tile1, Tile tile2) //Method that implements the tile "swap" animation
     {
         var icon1 = tile1.icon;
         var icon2 = tile2.icon;
@@ -259,7 +259,7 @@ public sealed class Board : MonoBehaviour
                     var inflateSequence = DOTween.Sequence();
                     foreach (var connectedTile in connectedTiles) //for each connected tile within our Pop method 
                     {
-                        connectedTile.Item = Item_Database.Items[Random.Range(0, Item_Database.Items.Length)]; //repopulates the grid after a "pop"
+                        connectedTile.Item = Item_Database.Items[Random.Range(0, 3)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
 
                         inflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
                     }

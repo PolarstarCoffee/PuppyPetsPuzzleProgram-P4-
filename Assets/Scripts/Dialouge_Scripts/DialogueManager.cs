@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
     
 
 {
-    public Text Dialogue_Txt; //refrence to display actual text
+    public TMP_Text dialogueText; //refrence to display actual text
     private Queue<string> sentences; //FIFO (First in first out data structure) private might need to be changed to public later to use it on other levels (if that's how that works lmao)
     
     //Initalization
@@ -51,13 +53,14 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         Debug.Log("Ending Conversation");
-        //Dialogue_Txt.text = sentence;
+        dialogueText.text = sentence;
 
     }
 
     void EndDialogue() //Signifies the end of the Dialogue 
     {
         Debug.Log("End of Conversation");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
  
 

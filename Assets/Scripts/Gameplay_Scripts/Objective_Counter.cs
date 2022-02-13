@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Objective_Counter : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class Objective_Counter : MonoBehaviour
             //reset birdsMatched counter
             //birdsMatched = 0;
             //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
 
         //display the counters, HAVE TO CHANGE THE TYPE OF TILE MATCHED EVERY LEVEL (can be an if statement, if sceneIndex = 3, objCOunter = 5 and Type = bird)
