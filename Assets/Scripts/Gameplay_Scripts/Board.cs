@@ -19,8 +19,8 @@ public sealed class Board : MonoBehaviour
     //a type Tile array named Tiles, has two parameters (x and y), and when called, will run in Tile.cs b/c it is get; private set 
     public Tile[,] Tiles { get; private set; }
 
-    public int Width => Tiles.GetLength(dimension:0);
-    public int Height => Tiles.GetLength(dimension:1);
+    public int Width => Tiles.GetLength(dimension: 0);
+    public int Height => Tiles.GetLength(dimension: 1);
 
     private readonly List<Tile> _Selection = new();
 
@@ -36,7 +36,9 @@ public sealed class Board : MonoBehaviour
     //getting the amount of tiles matched for the ObjectiveCounter.cs
     public int matchAmount;
 
-    //public MoveCountScript moveDisplay; //getting the MoveCountScript 
+    //making a counter to count what level the player is on in order to place tiles correctly and update the objective in the Obj Counter script
+    public int levelIndex = 2;
+
 
     private void Start()
     {
@@ -55,12 +57,13 @@ public sealed class Board : MonoBehaviour
                 tile.x = x;
                 tile.y = y;
 
-                
+
                 Tiles[x, y] = tile;
 
                 //determining which item is in each tile by setting the tile.item to the item_database random pick of all items inside (2/12/22 Edit: Excluded obstacle tile from spawning randomly)
-                tile.Item = Item_Database.Items[Random.Range(0, 3)];
+                tile.Item = Item_Database.Items[Random.Range(0, 4)];
 
+                //ADD CANNOT SPAWN MATCHES AT START
 
                 //try implemementing specific placement of tiles
                 //set the bottom row to all triangles (obstacles tile.item.type = 4)
@@ -72,16 +75,123 @@ public sealed class Board : MonoBehaviour
             }
         }
 
-        //HOW DO I CHANGE THE ITEM WITHIN A SPECIFIC TILE?
-        //trying to change one tile by using the Tiles array
-        //Tiles[1 , 1].Item.type = 4;
-
         //This works to put the specific item into a tile
-        rows[0].tiles[0].Item = Item_Database.Items[4];
-        rows[0].tiles[1].Item = Item_Database.Items[4];
-        rows[0].tiles[2].Item = Item_Database.Items[4];
-        rows[0].tiles[3].Item = Item_Database.Items[4];
+        //rows[0].tiles[0].Item = Item_Database.Items[4];
+        //rows[0].tiles[1].Item = Item_Database.Items[4];
+        //rows[0].tiles[2].Item = Item_Database.Items[4];
+        //rows[0].tiles[3].Item = Item_Database.Items[4];
+
+        //checking what levelIndex is to place the tiles correctly.
+        /*if (levelIndex == 0)
+        {
+            //place tiles for level One
+            //All tiles are random anyway so stays the same
+        }*/
+        if (levelIndex == 2)
+        {
+            //palce tiles for level two
+            //obstacles
+            rows[1].tiles[0].Item = Item_Database.Items[4];
+            rows[1].tiles[4].Item = Item_Database.Items[4];
+            rows[2].tiles[0].Item = Item_Database.Items[4];
+            rows[2].tiles[1].Item = Item_Database.Items[4];
+            rows[2].tiles[3].Item = Item_Database.Items[4];
+            rows[2].tiles[4].Item = Item_Database.Items[4];
+        }
+        else if (levelIndex == 3)
+        {
+            //place tiles for level three
+            //obstacles
+            rows[1].tiles[1].Item = Item_Database.Items[4];
+            rows[1].tiles[2].Item = Item_Database.Items[4];
+            rows[1].tiles[3].Item = Item_Database.Items[4];
+            rows[1].tiles[4].Item = Item_Database.Items[4];
+            
+
+            rows[4].tiles[1].Item = Item_Database.Items[4];
+            rows[4].tiles[2].Item = Item_Database.Items[4];
+            rows[4].tiles[3].Item = Item_Database.Items[4];
+            rows[4].tiles[4].Item = Item_Database.Items[4];
+            
+
+        }
+        else if (levelIndex == 4)
+        {
+            //place tiles for level four
+            //obstacles
+            rows[4].tiles[2].Item = Item_Database.Items[4];
+            rows[4].tiles[3].Item = Item_Database.Items[4];
+
+            rows[7].tiles[0].Item = Item_Database.Items[4];
+            rows[7].tiles[1].Item = Item_Database.Items[4];
+            rows[7].tiles[2].Item = Item_Database.Items[4];
+            rows[7].tiles[3].Item = Item_Database.Items[4];
+            rows[7].tiles[4].Item = Item_Database.Items[4];
+            rows[7].tiles[5].Item = Item_Database.Items[4];
+
+            rows[8].tiles[0].Item = Item_Database.Items[4];
+            rows[8].tiles[1].Item = Item_Database.Items[4];
+            rows[8].tiles[2].Item = Item_Database.Items[4];
+            rows[8].tiles[3].Item = Item_Database.Items[4];
+            rows[8].tiles[4].Item = Item_Database.Items[4];
+            rows[8].tiles[5].Item = Item_Database.Items[4];
+
+            rows[9].tiles[0].Item = Item_Database.Items[4];
+            rows[9].tiles[1].Item = Item_Database.Items[4];
+            rows[9].tiles[2].Item = Item_Database.Items[4];
+            rows[9].tiles[3].Item = Item_Database.Items[4];
+            rows[9].tiles[4].Item = Item_Database.Items[4];
+            rows[9].tiles[5].Item = Item_Database.Items[4];
+        }
+        else if (levelIndex == 5)
+        {
+            //place tiles for level five
+
+            //icons
+            rows[0].tiles[0].Item = Item_Database.Items[0];
+            rows[0].tiles[1].Item = Item_Database.Items[1];
+            rows[0].tiles[2].Item = Item_Database.Items[1];
+
+            rows[1].tiles[0].Item = Item_Database.Items[1];
+            rows[1].tiles[1].Item = Item_Database.Items[3];
+            rows[1].tiles[2].Item = Item_Database.Items[3];
+
+            rows[2].tiles[0].Item = Item_Database.Items[3];
+            rows[2].tiles[1].Item = Item_Database.Items[0];
+            rows[2].tiles[2].Item = Item_Database.Items[0];
+
+            rows[3].tiles[0].Item = Item_Database.Items[0];
+            rows[3].tiles[1].Item = Item_Database.Items[1];
+            rows[3].tiles[2].Item = Item_Database.Items[1];
+
+            rows[4].tiles[0].Item = Item_Database.Items[3];
+            rows[4].tiles[1].Item = Item_Database.Items[0];
+            rows[4].tiles[2].Item = Item_Database.Items[3];
+            rows[4].tiles[3].Item = Item_Database.Items[3];
+
+            rows[5].tiles[0].Item = Item_Database.Items[1];
+            rows[5].tiles[1].Item = Item_Database.Items[3];
+            rows[5].tiles[2].Item = Item_Database.Items[0];
+            rows[5].tiles[3].Item = Item_Database.Items[0];
+
+
+            //obstacles
+            rows[0].tiles[3].Item = Item_Database.Items[4];
+            rows[1].tiles[3].Item = Item_Database.Items[4];
+            rows[2].tiles[3].Item = Item_Database.Items[4];
+            rows[3].tiles[3].Item = Item_Database.Items[4];
+            rows[4].tiles[4].Item = Item_Database.Items[4];
+            rows[5].tiles[4].Item = Item_Database.Items[4];
+        }
+
+
+        //Add one to the level index to determine what level layout is placed on the grid
+        //levelIndex += 1;
+        //EDIT just change the levelIndex in the hierarchy on the Board board script in inspector
     }
+
+
+    
 
     private void Update()
     {
@@ -246,6 +356,8 @@ public sealed class Board : MonoBehaviour
 
                     //get the Item Type which the connected tiles are
                     matchType = tile.Item.type;
+
+                    
                     //Debug.Log(matchType + "is the Item matched");
 
                     //getting the amount of tiles matched
@@ -259,9 +371,17 @@ public sealed class Board : MonoBehaviour
                     var inflateSequence = DOTween.Sequence();
                     foreach (var connectedTile in connectedTiles) //for each connected tile within our Pop method 
                     {
-                        connectedTile.Item = Item_Database.Items[Random.Range(0, 3)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
+                        connectedTile.Item = Item_Database.Items[Random.Range(0, 4)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
 
                         inflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
+                    }
+
+                    //for obstacles to repopulate with tiles
+                    foreach (var connectedObstacleTile in connectedObstacleTiles) //for each connected tile within our Pop method 
+                    {
+                        connectedObstacleTile.Item = Item_Database.Items[Random.Range(0, 4)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
+
+                        inflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
                     }
 
                     await inflateSequence.Play().AsyncWaitForCompletion();
