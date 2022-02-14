@@ -6,15 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menu_Screens/MainMenu.unity
     guid: a0be7e3000c893c45b5fedc7f2aaf9be
   - enabled: 1
-    path: Assets/Scenes/Dialouge_Intro.unity
-    guid: 287983eb47f66f84faac62effe7ee991
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_Intro 1.unity
+    guid: ae20b854e7cc2d742a49f56729f8e856
   - enabled: 1
-    path: Assets/Scenes/Level01_Prototype.unity
+    path: Assets/Scenes/Level_Scenes/Level01_Prototype.unity
     guid: c43f35f007ac9624d9aa5a53be84fa12
   - enabled: 1
-    path: Assets/Scenes/End Scene.unity
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_2.unity
+    guid: 287983eb47f66f84faac62effe7ee991
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Level02_Prototype.unity
+    guid: 7fdbddd44f4b3dd49acf6fba3a1b96a8
+  - enabled: 1
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_3.unity
+    guid: 4af9682bb080a2148823b8d82d658ded
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Level03_Prototype.unity
+    guid: e6b0967b13492eb489e9d55b3e78e5cf
+  - enabled: 1
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_4.unity
+    guid: b63eb909e450c904a8a3fc90ce81d222
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Level04_Prototype.unity
+    guid: c5d1fd9d57a4cb94487d598517955ab3
+  - enabled: 1
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_5.unity
+    guid: 429e5eabf52c71a43a9431a58c593aec
+  - enabled: 1
+    path: Assets/Scenes/Level_Scenes/Level05_Prototype.unity
+    guid: f65522307a7e6904da52f2b3c02d08ce
+  - enabled: 1
+    path: Assets/Scenes/Dialogue_Scenes/Dialouge_6.unity
+    guid: 02aeeef35030b5443bf3dccfb346b88d
+  - enabled: 1
+    path: Assets/Scenes/Menu_Screens/End Scene.unity
     guid: 2b1483f5ca4455844bc41f0b6080298f
   m_configObjects: {}
