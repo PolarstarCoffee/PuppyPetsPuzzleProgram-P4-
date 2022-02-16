@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bird
   m_EditorClassIdentifier: 
   value: 5
-  sprite: {fileID: 21300000, guid: 7783a2b8246d6884ea3f9be9827c0576, type: 3}
+  type: 0
+  sprite: {fileID: 21300000, guid: 4bc3ea184cfde9846a68b74c7b3c0a62, type: 3}

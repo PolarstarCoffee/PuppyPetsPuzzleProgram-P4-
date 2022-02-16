@@ -50,7 +50,7 @@ public class Objective_Counter : MonoBehaviour
             if (boardScript.matchType == 0)
             {
                 birdsMatched += boardScript.matchAmount;
-                Debug.Log(birdsMatched + "/" + objectiveGoal);
+                Debug.Log(birdsMatched + "/" + objectiveGoal + "Birds Matched");
 
                 //reset the matchType, otherwise will infinite add
                 boardScript.matchType = -1;
@@ -68,7 +68,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = birdsMatched + "/" + objectiveGoal;
+            objectiveDisplay.text = birdsMatched + "/" + objectiveGoal + "Birds Matched";
         }
 
 
@@ -76,7 +76,7 @@ public class Objective_Counter : MonoBehaviour
         //level two objective, count obstacles 'cleared'
         if (boardScript.levelIndex == 2)
         {
-            if (boardScript.matchType == 4)
+            if (boardScript.matchType == 2)
             {
                 obstaclesMatched += boardScript.matchAmount;
                 Debug.Log(obstaclesMatched + "/" + objectiveGoal);
@@ -96,7 +96,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = obstaclesMatched + "/" + objectiveGoal;
+            objectiveDisplay.text = obstaclesMatched + "/" + objectiveGoal + "Yellow Dogs Matched";
         }
 
 
@@ -124,7 +124,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = catsMatched + "/" + objectiveGoal;
+            objectiveDisplay.text = catsMatched + "/" + objectiveGoal + "Cats Matched";
         }
 
 
@@ -132,7 +132,7 @@ public class Objective_Counter : MonoBehaviour
         //level four objective, count obstacles 'cleared' (type = 4)
         if (boardScript.levelIndex == 4)
         {
-            if (boardScript.matchType == 4)
+            if (boardScript.matchType == 3)
             {
                 obstaclesMatched += boardScript.matchAmount;
                 Debug.Log(obstaclesMatched + "/" + objectiveGoal);
@@ -152,7 +152,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = obstaclesMatched + "/" + objectiveGoal;
+            objectiveDisplay.text = obstaclesMatched + "/" + objectiveGoal + "Blue Dogs Matched";
         }
 
 
@@ -179,7 +179,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = dogsMatched + "/" + objectiveGoal;
+            objectiveDisplay.text = dogsMatched + "/" + objectiveGoal + "Blue Dogs Matched";
         }
 
         //test Check if the matchType int value is 0 (the bird's Type value), if so add the matched amount of bird tiles to the counter
