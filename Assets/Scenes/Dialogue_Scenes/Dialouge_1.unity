@@ -497,7 +497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104.21, y: -91}
+  m_AnchoredPosition: {x: 87, y: -32.5}
   m_SizeDelta: {x: 97.7916, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695567822
@@ -713,7 +713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 35}
+  m_AnchoredPosition: {x: 0, y: 20.199982}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164019096
@@ -736,9 +736,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "So how have the past days been treating you? You're almost on leave, though
-    we appreciate your hard work! We\u2019ll miss you here at the Puppy Play Place.
-    You're always welcome to list us on your refrences! "
+  m_text: Welcome, welcome! Here at Puppy Play Place, we got pets looking for their
+    forever owners!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
   m_sharedMaterial: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
@@ -765,8 +764,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -954,8 +953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.084702}
-  m_SizeDelta: {x: -372.7943, y: -237.8306}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -372.7943, y: -276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881610329
 MonoBehaviour:
@@ -1078,7 +1077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 99.78471}
+  m_AnchoredPosition: {x: 0.000011444, y: 80.7}
   m_SizeDelta: {x: 138.3762, y: 23.7847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2142842983
@@ -1189,4 +1188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Employee
-    sentences: []
+    sentences:
+    - 'Take note they''re real characters here, so don''t be afraid of their welcome! '
+    - 'Though...since it IS your first day, someone should train you...I got you! '

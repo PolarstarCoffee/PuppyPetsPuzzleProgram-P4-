@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndScene_Function : MonoBehaviour
+public class ObjectReveal : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

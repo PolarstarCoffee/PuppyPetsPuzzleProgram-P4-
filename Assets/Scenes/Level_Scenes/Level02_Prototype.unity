@@ -197,6 +197,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1302335501456943134, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+    - target: {fileID: 1302335501456943134, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
     - target: {fileID: 1302335502027368004, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -305,10 +313,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502314575959, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302335502314575959, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302335502314575959, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.009433985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302335502391210542, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+    - target: {fileID: 1302335502391210542, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
     - target: {fileID: 1302335502391210705, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: objectiveGoal
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_fontSize
+      value: 40.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+    - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
     - target: {fileID: 1302335503333423669, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1067,7 +1107,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
