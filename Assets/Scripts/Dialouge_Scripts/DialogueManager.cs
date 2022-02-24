@@ -60,10 +60,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() //Signifies the end of the Dialogue 
     {
         Debug.Log("End of Conversation");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         if (SceneManager.GetActiveScene().buildIndex == 13) //if the build index is at our tutorial level start level 1
         {
             SceneManager.LoadScene("Level01_Prototype");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
     }
  
