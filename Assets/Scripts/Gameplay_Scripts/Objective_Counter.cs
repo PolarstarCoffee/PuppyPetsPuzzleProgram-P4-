@@ -55,7 +55,7 @@ public class Objective_Counter : MonoBehaviour
             if (boardScript.matchType != -1)
             {
                 puraMatched += boardScript.matchAmount;
-                Debug.Log(puraMatched + "/" + objectiveGoalOne + "Birds Matched");
+                Debug.Log(puraMatched + "/" + objectiveGoalOne + " Pets Matched");
 
                 //reset the matchType, otherwise will infinite add
                 boardScript.matchType = -1;
@@ -73,7 +73,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + "Birds Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
         }
 
 
@@ -101,7 +101,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + "Yellow Dogs Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
         }
 
 
@@ -129,7 +129,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + "Cats Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
         }
 
 
@@ -157,7 +157,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + "Blue Dogs Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
         }
 
 
@@ -184,7 +184,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + "Blue Dogs Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
         }
 
         //test Check if the matchType int value is 0 (the bird's Type value), if so add the matched amount of bird tiles to the counter

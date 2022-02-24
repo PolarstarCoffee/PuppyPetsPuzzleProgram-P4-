@@ -29,7 +29,7 @@ public sealed class Board : MonoBehaviour
 
     public int moveCount = 0; //keeps a count of the moves made, a move is when a swap happens AND a match is made
 
-    public int moveLimit = 4; // test int var for ending the game when the moveLimit is reached, is checked for after every match.
+    public int moveLimit; // test int var for ending the game when the moveLimit is reached, is checked for after every match.
 
     //gets the Type of Item that was matched
     public int matchType;
@@ -246,13 +246,9 @@ public sealed class Board : MonoBehaviour
         {
             Pop();
 
-            moveCount += 1; //adds one to the moveCount var
+            //moveCount += 1; //adds one to the moveCount var
 
-            if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
-            {
-                Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
-            }
+            
            
         }
 
@@ -269,8 +265,15 @@ public sealed class Board : MonoBehaviour
         //_Selection[0].icon.color = notSelectedColor;
         //_Selection[1].icon.color = notSelectedColor;
         _Selection.Clear();
-        
+        moveCount += 1; //adds one to the moveCount var
 
+        //may have to move where this checks if it sends player to retry scence before winning and going to next dialouge
+
+        if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
+        {
+            Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
+        }
     }
 
 

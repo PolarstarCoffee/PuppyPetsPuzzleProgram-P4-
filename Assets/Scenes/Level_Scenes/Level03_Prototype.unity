@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: moveLimit
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: levelIndex

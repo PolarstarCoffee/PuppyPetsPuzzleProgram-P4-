@@ -31,6 +31,6 @@ public class MoveDisplay : MonoBehaviour
     void Update()
     {
         //getting the moveCount and moveLimit from Board.cs and putting them into the TMP moveCounter 
-        moveCounter.text = boardScript.moveCount.ToString() + " / " + boardScript.moveLimit.ToString() + "Moves";
+        moveCounter.text = boardScript.moveCount.ToString() + " / " + boardScript.moveLimit.ToString() + " Moves";
     }
 }
