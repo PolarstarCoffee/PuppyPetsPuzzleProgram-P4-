@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: objectiveGoal
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502391210705, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: objectiveGoalOne
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_fontSize
       value: 40.8

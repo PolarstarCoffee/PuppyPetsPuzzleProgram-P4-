@@ -34,6 +34,7 @@ public sealed class Tile : MonoBehaviour
 
     }
 
+    
 
     public Image icon;
 
@@ -57,7 +58,7 @@ public sealed class Tile : MonoBehaviour
     //List getting tiles, just like Neighbors list, except just getting item.type = 4 obstacles
         //CURRENTLY will get the obstacle tiles, BUT will group them together so all connected obstacle tiles are matched, not just the one adjacent
         //ALSO will ONLY match the obstacle tiles adjacent to the location of the first swapped tile
-    public List<Tile> GetObstacleTiles(List<Tile> excludeOne = null)
+    /*public List<Tile> GetObstacleTiles(List<Tile> excludeOne = null)
     {
         var obstacleList = new List<Tile> { this, };
 
@@ -84,7 +85,7 @@ public sealed class Tile : MonoBehaviour
         return obstacleList;
 
     }
-
+    */
 
 
     public List<Tile> GetConnectedTiles(List<Tile> exclude = null) //returns adjacent tiles 
@@ -111,7 +112,7 @@ public sealed class Tile : MonoBehaviour
         return result;
 
         }
-    }
+}
 
 
 

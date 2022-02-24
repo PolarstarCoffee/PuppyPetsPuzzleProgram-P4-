@@ -39,6 +39,14 @@ public sealed class Board : MonoBehaviour
     //making a counter to count what level the player is on in order to place tiles correctly and update the objective in the Obj Counter script
     public int levelIndex = 2;
 
+    //making a color var for when a tile is selected to change to this color
+    //public Color selectedColor;
+
+    //making a color var for when the tile is unselected
+    //public Color notSelectedColor;
+
+    //changeing the alpha
+    
 
     private void Start()
     {
@@ -61,7 +69,7 @@ public sealed class Board : MonoBehaviour
                 Tiles[x, y] = tile;
 
                 //determining which item is in each tile by setting the tile.item to the item_database random pick of all items inside (2/12/22 Edit: Excluded obstacle tile from spawning randomly)
-                tile.Item = Item_Database.Items[Random.Range(0, 4)];
+                tile.Item = Item_Database.Items[4];
 
                 //ADD CANNOT SPAWN MATCHES AT START
 
@@ -87,101 +95,86 @@ public sealed class Board : MonoBehaviour
             //place tiles for level One
             //All tiles are random anyway so stays the same
         }*/
-        if (levelIndex == 2)
+        if (levelIndex == 1)
         {
             //palce tiles for level two
             //obstacles
-            rows[1].tiles[0].Item = Item_Database.Items[4];
-            rows[1].tiles[4].Item = Item_Database.Items[4];
-            rows[2].tiles[0].Item = Item_Database.Items[4];
-            rows[2].tiles[1].Item = Item_Database.Items[4];
-            rows[2].tiles[3].Item = Item_Database.Items[4];
-            rows[2].tiles[4].Item = Item_Database.Items[4];
+            rows[0].tiles[2].Item = Item_Database.Items[2];
+            rows[1].tiles[1].Item = Item_Database.Items[1];
+            rows[1].tiles[3].Item = Item_Database.Items[0];
+            rows[3].tiles[1].Item = Item_Database.Items[0];
+            rows[3].tiles[2].Item = Item_Database.Items[2];
+            rows[3].tiles[3].Item = Item_Database.Items[1];
+            rows[4].tiles[1].Item = Item_Database.Items[0];
+            rows[4].tiles[2].Item = Item_Database.Items[2];
+            rows[4].tiles[3].Item = Item_Database.Items[1];
         }
-        else if (levelIndex == 3)
+        else if (levelIndex == 2)
         {
             //place tiles for level three
             //obstacles
-            rows[1].tiles[1].Item = Item_Database.Items[4];
-            rows[1].tiles[2].Item = Item_Database.Items[4];
-            rows[1].tiles[3].Item = Item_Database.Items[4];
-            rows[1].tiles[4].Item = Item_Database.Items[4];
+            rows[0].tiles[0].Item = Item_Database.Items[1];
+            rows[0].tiles[3].Item = Item_Database.Items[2];
+            rows[0].tiles[4].Item = Item_Database.Items[2];
             
 
-            rows[4].tiles[1].Item = Item_Database.Items[4];
-            rows[4].tiles[2].Item = Item_Database.Items[4];
-            rows[4].tiles[3].Item = Item_Database.Items[4];
-            rows[4].tiles[4].Item = Item_Database.Items[4];
+            rows[1].tiles[0].Item = Item_Database.Items[1];
+            rows[1].tiles[1].Item = Item_Database.Items[2];
+            rows[1].tiles[3].Item = Item_Database.Items[1];
+
+            rows[3].tiles[1].Item = Item_Database.Items[0];
+            rows[3].tiles[3].Item = Item_Database.Items[3];
+            rows[3].tiles[4].Item = Item_Database.Items[0];
             
+
+            rows[4].tiles[0].Item = Item_Database.Items[3];
+            rows[4].tiles[1].Item = Item_Database.Items[3];
+            rows[4].tiles[4].Item = Item_Database.Items[0];
+            
+            
+
+        }
+        else if (levelIndex == 3)
+        {
+            //place tiles for level four
+
+            rows[0].tiles[2].Item = Item_Database.Items[1];
+            rows[0].tiles[4].Item = Item_Database.Items[1];
+
+            rows[1].tiles[2].Item = Item_Database.Items[1];
+
+            rows[2].tiles[0].Item = Item_Database.Items[1];
+            rows[2].tiles[1].Item = Item_Database.Items[1];
+            rows[2].tiles[3].Item = Item_Database.Items[1];
+            rows[2].tiles[4].Item = Item_Database.Items[1];
+
+            rows[4].tiles[1].Item = Item_Database.Items[1];
+            rows[4].tiles[2].Item = Item_Database.Items[1];
 
         }
         else if (levelIndex == 4)
         {
-            //place tiles for level four
-            //obstacles
-            rows[4].tiles[2].Item = Item_Database.Items[4];
-            rows[4].tiles[3].Item = Item_Database.Items[4];
-
-            rows[7].tiles[0].Item = Item_Database.Items[4];
-            rows[7].tiles[1].Item = Item_Database.Items[4];
-            rows[7].tiles[2].Item = Item_Database.Items[4];
-            rows[7].tiles[3].Item = Item_Database.Items[4];
-            rows[7].tiles[4].Item = Item_Database.Items[4];
-            rows[7].tiles[5].Item = Item_Database.Items[4];
-
-            rows[8].tiles[0].Item = Item_Database.Items[4];
-            rows[8].tiles[1].Item = Item_Database.Items[4];
-            rows[8].tiles[2].Item = Item_Database.Items[4];
-            rows[8].tiles[3].Item = Item_Database.Items[4];
-            rows[8].tiles[4].Item = Item_Database.Items[4];
-            rows[8].tiles[5].Item = Item_Database.Items[4];
-
-            rows[9].tiles[0].Item = Item_Database.Items[4];
-            rows[9].tiles[1].Item = Item_Database.Items[4];
-            rows[9].tiles[2].Item = Item_Database.Items[4];
-            rows[9].tiles[3].Item = Item_Database.Items[4];
-            rows[9].tiles[4].Item = Item_Database.Items[4];
-            rows[9].tiles[5].Item = Item_Database.Items[4];
-        }
-        else if (levelIndex == 5)
-        {
             //place tiles for level five
 
             //icons
-            rows[0].tiles[0].Item = Item_Database.Items[0];
-            rows[0].tiles[1].Item = Item_Database.Items[1];
-            rows[0].tiles[2].Item = Item_Database.Items[1];
+            rows[0].tiles[1].Item = Item_Database.Items[3];
+            rows[0].tiles[2].Item = Item_Database.Items[0];
+            rows[0].tiles[3].Item = Item_Database.Items[3];
 
-            rows[1].tiles[0].Item = Item_Database.Items[1];
             rows[1].tiles[1].Item = Item_Database.Items[3];
-            rows[1].tiles[2].Item = Item_Database.Items[3];
+            rows[1].tiles[3].Item = Item_Database.Items[3];
 
-            rows[2].tiles[0].Item = Item_Database.Items[3];
-            rows[2].tiles[1].Item = Item_Database.Items[0];
-            rows[2].tiles[2].Item = Item_Database.Items[0];
+            rows[3].tiles[1].Item = Item_Database.Items[0];
+            rows[3].tiles[3].Item = Item_Database.Items[0];
 
-            rows[3].tiles[0].Item = Item_Database.Items[0];
-            rows[3].tiles[1].Item = Item_Database.Items[1];
-            rows[3].tiles[2].Item = Item_Database.Items[1];
-
-            rows[4].tiles[0].Item = Item_Database.Items[3];
             rows[4].tiles[1].Item = Item_Database.Items[0];
             rows[4].tiles[2].Item = Item_Database.Items[3];
-            rows[4].tiles[3].Item = Item_Database.Items[3];
+            rows[4].tiles[3].Item = Item_Database.Items[0];
+            
+        }
+        else if (levelIndex == 5)
+        {
 
-            rows[5].tiles[0].Item = Item_Database.Items[1];
-            rows[5].tiles[1].Item = Item_Database.Items[3];
-            rows[5].tiles[2].Item = Item_Database.Items[0];
-            rows[5].tiles[3].Item = Item_Database.Items[0];
-
-
-            //obstacles
-            rows[0].tiles[3].Item = Item_Database.Items[4];
-            rows[1].tiles[3].Item = Item_Database.Items[4];
-            rows[2].tiles[3].Item = Item_Database.Items[4];
-            rows[3].tiles[3].Item = Item_Database.Items[4];
-            rows[4].tiles[4].Item = Item_Database.Items[4];
-            rows[5].tiles[4].Item = Item_Database.Items[4];
         }
 
 
@@ -207,27 +200,38 @@ public sealed class Board : MonoBehaviour
 
         //if( !_Selection.Contains(tile))_Selection.Add(tile);
         //Do not let player select a obstacle (tile.Item.type = 4)
-        if( !_Selection.Contains(tile) && tile.Item.type != 4)
+        if( !_Selection.Contains(tile)) //&& tile.Item.type != 4)
         {
             //only choose another tile neighboring the first chosen tile
             if (_Selection.Count > 0)
             {
                 //unity does not have Array, need to use System.Array... or list.IndexOf
                 //making sure the index of the _Selection[0] is not -1
-                if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
-                {
+
+                //if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
+                //{
                     _Selection.Add(tile);
-                }
-                else
-                {
-                    _Selection.Clear();//clear selection, WORKS kindof, after selecting a non-neighboring tile the selection is cleared and a new tile has to be selected
-                    //ADD color to which tile is selected
-                }
+                    //var tempAlpha = tile.icon.color;
+                    //tempAlpha.a = 0.75f;
+                    //tile.icon.color = tempAlpha;
+                //making the tile the selectedColor
+                //tile.icon.color = selectedColor;
+                //}
+                //else
+                //{
+                //    _Selection.Clear();//clear selection, WORKS kindof, after selecting a non-neighboring tile the selection is cleared and a new tile has to be selected
+                //ADD color to which tile is selected
+                //}
                 //else to reset the player's tile selection when they click on any tile not in _Seleciton[0].Neighbours
             }
             else
             {
                 _Selection.Add(tile);
+                //making the tile the selectedColor
+                //tile.icon.color.a = 0.75f;
+                //var tempAlpha = tile.icon.color;
+                //tempAlpha.a = 0.75f;
+                //tile.icon.color = tempAlpha;
             }
         }
 
@@ -251,18 +255,21 @@ public sealed class Board : MonoBehaviour
             }
            
         }
-        else
+
+        //removing else since players can swap and not create a match
+        /*else
         {
             await Swap(_Selection[0], _Selection[1]); //Swaps back if no match is made 
             //clear the _Selection list
             _Selection.Clear();
             
-        }
+        }*/
 
-       
 
+        //_Selection[0].icon.color = notSelectedColor;
+        //_Selection[1].icon.color = notSelectedColor;
         _Selection.Clear();
-
+        
 
     }
 
@@ -310,6 +317,7 @@ public sealed class Board : MonoBehaviour
                 //adding an if check to make sure the connected tiles are not Type int value 4 (obstacle), EDIT only working when a match of 3 
                 //triangles is trying to be swapped, is a match of more than 4 is made it will still swap AND if a triangle is spawned to create a 3
                 //match it will still match
+
                 if (Tiles[x, y].Item.type != 4)
                 {
                     if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2) // && Tiles[x, y].Item.type != 4) //More than or equal to two equals a match: Will change later  
@@ -334,7 +342,7 @@ public sealed class Board : MonoBehaviour
 
                     //IF obstacle is adjacenet to a match, remove it and add to the obstacle objective counter
 
-                    var connectedObstacleTiles = tile.GetObstacleTiles();
+                    //var connectedObstacleTiles = tile.GetObstacleTiles();
                     //Debug.Log(connectedObstacleTiles.ToString());
                     
                     if (connectedTiles.Skip(1).Count() < 2) continue; //If 3 tiles aren't connected, continue 
@@ -347,7 +355,7 @@ public sealed class Board : MonoBehaviour
                     foreach (var connectedTile in connectedTiles) deflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration)); //Pop sequence using DOTween
 
                     //making connectedObstableTiles also animate
-                    foreach (var connectedObstacleTile in connectedObstacleTiles) deflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.zero, TweenDuration)); 
+                    //foreach (var connectedObstacleTile in connectedObstacleTiles) deflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.zero, TweenDuration)); 
 
                     await deflateSequence.Play().AsyncWaitForCompletion();  //Waits until it's finished playing until doing it over again. 
 
@@ -364,28 +372,28 @@ public sealed class Board : MonoBehaviour
                     matchAmount = connectedTiles.Count;
 
                     //TESTING DROPPING TILES DOWN
-                        //save the matched tiles x,y position as spawnTile and move it upto where the x,y will be the only empty space above
+                    //save the matched tiles x,y position as spawnTile and move it upto where the x,y will be the only empty space above
 
 
-
+                    //making the respawned tiles ItemDatabase.Items[4]
                     var inflateSequence = DOTween.Sequence();
                     foreach (var connectedTile in connectedTiles) //for each connected tile within our Pop method 
                     {
-                        connectedTile.Item = Item_Database.Items[Random.Range(0, 4)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
+                        connectedTile.Item = Item_Database.Items[4]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
 
                         inflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
                     }
 
                     //for obstacles to repopulate with tiles
-                    foreach (var connectedObstacleTile in connectedObstacleTiles) //for each connected tile within our Pop method 
+                    /*foreach (var connectedObstacleTile in connectedObstacleTiles) //for each connected tile within our Pop method 
                     {
                         connectedObstacleTile.Item = Item_Database.Items[Random.Range(0, 4)]; // Item_Database.Items.Length)]; //repopulates the grid after a "pop"
 
                         inflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
-                    }
-
+                    }*/
+                    
                     await inflateSequence.Play().AsyncWaitForCompletion();
-
+                    
 
                     x = 0;
                     y = 0;  //Reset
@@ -395,6 +403,7 @@ public sealed class Board : MonoBehaviour
         } 
 
     }
+
 
 } 
 
