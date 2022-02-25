@@ -9,12 +9,14 @@ public class DialogueManager : MonoBehaviour
     
 
 {
+    
     public TMP_Text dialogueText; //refrence to display actual text
     private Queue<string> sentences; //FIFO (First in first out data structure) private might need to be changed to public later to use it on other levels (if that's how that works lmao)
     
     //Initalization
     void Start()
     {
+      
         sentences = new Queue<string>(); //Initalizes Queue
     }
 
