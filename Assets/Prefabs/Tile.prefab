@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -213,6 +213,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  selectedColor: {r: 0.2381867, g: 0.9150943, b: 0.09064613, a: 1}
   icon: {fileID: 1391845721343516328}
   button: {fileID: 2460049861871382697}

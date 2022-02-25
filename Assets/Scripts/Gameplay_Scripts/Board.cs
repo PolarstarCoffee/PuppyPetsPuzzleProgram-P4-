@@ -40,13 +40,16 @@ public sealed class Board : MonoBehaviour
     public int levelIndex = 2;
 
     //making a color var for when a tile is selected to change to this color
-    //public Color selectedColor;
+    public Color selectedColor;
 
     //making a color var for when the tile is unselected
-    //public Color notSelectedColor;
+    public Color notSelectedColor;
 
     //changeing the alpha
-    
+
+    //on/off var to check if a swap can happen 
+    private bool swapSwitch = true;
+
 
     private void Start()
     {
@@ -191,88 +194,136 @@ public sealed class Board : MonoBehaviour
         //if (!Input.GetKeyDown(KeyCode.A)) return;
 
         //foreach (var connectedTile in Tiles[0, 0].GetConnectedTiles()) connectedTile.icon.transform.DOScale(1.25f, TweenDuration).Play();
+
+        //manual clear of selection by pressing spacebar, change to something else later but works for now
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _Selection[0].icon.color = notSelectedColor;
+            _Selection.Clear();
+        }
+
+
     }
 
     //class for selecting two tiles
     public async void Select(Tile tile)
     {
-        //ADD TIMER TO WAIT FOR THE TILES TO FULLY SWAP UNTILL PLAYER CAN SELECT TILES AGAIN
 
-        //if( !_Selection.Contains(tile))_Selection.Add(tile);
-        //Do not let player select a obstacle (tile.Item.type = 4)
-        if( !_Selection.Contains(tile)) //&& tile.Item.type != 4)
+        notSelectedColor = tile.icon.color;
+
+        if (swapSwitch == true)
         {
-            //only choose another tile neighboring the first chosen tile
-            if (_Selection.Count > 0)
-            {
-                //unity does not have Array, need to use System.Array... or list.IndexOf
-                //making sure the index of the _Selection[0] is not -1
+            //ADD TIMER TO WAIT FOR THE TILES TO FULLY SWAP UNTILL PLAYER CAN SELECT TILES AGAIN
 
-                //if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
-                //{
+            //if( !_Selection.Contains(tile))_Selection.Add(tile);
+            //Do not let player select a obstacle (tile.Item.type = 4)
+            if (!_Selection.Contains(tile)) //&& tile.Item.type != 4)
+            {
+                //only choose another tile neighboring the first chosen tile
+                if (_Selection.Count > 0)
+                {
+                    //unity does not have Array, need to use System.Array... or list.IndexOf
+                    //making sure the index of the _Selection[0] is not -1
+
+                    //if (System.Array.IndexOf(_Selection[0].Neighbours, tile) != -1)
+                    //{
+
                     _Selection.Add(tile);
+                    //check to see if the second chosen tile is an 'empty' space
+                    //if the first tile is not an empty space, allow the player to select any tile
+                    /*if (_Selection[0].Item != Item_Database.Items[4])
+                    {
+                        _Selection.Add(tile);
+                    }
+                        //else if the first tile is an empty space, do not allow player to close another empty space
+                    else if (_Selection[0].Item == Item_Database.Items[4])
+                    {
+
+                    }*/
+
+
                     //var tempAlpha = tile.icon.color;
                     //tempAlpha.a = 0.75f;
                     //tile.icon.color = tempAlpha;
-                //making the tile the selectedColor
-                //tile.icon.color = selectedColor;
-                //}
-                //else
-                //{
-                //    _Selection.Clear();//clear selection, WORKS kindof, after selecting a non-neighboring tile the selection is cleared and a new tile has to be selected
-                //ADD color to which tile is selected
-                //}
-                //else to reset the player's tile selection when they click on any tile not in _Seleciton[0].Neighbours
+                    //making the tile the selectedColor
+                    tile.icon.color = selectedColor;
+                    //}
+                    //else
+                    //{
+                    //    _Selection.Clear();//clear selection, WORKS kindof, after selecting a non-neighboring tile the selection is cleared and a new tile has to be selected
+                    //ADD color to which tile is selected
+                    //}
+                    //else to reset the player's tile selection when they click on any tile not in _Seleciton[0].Neighbours
+                }
+                else
+                {
+                    
+                    _Selection.Add(tile);
+                    //do not allow player to choose an empty space for their first selection
+                    if (_Selection[0].Item == Item_Database.Items[4])
+                    {
+                        _Selection[0].icon.color = notSelectedColor;
+                        _Selection.Clear();
+                    }
+                    else
+                    {
+                        tile.icon.color = selectedColor;
+                    }
+
+                    //var tempAlpha = tile.icon.color;
+                    //tempAlpha.a = 0.75f;
+                    //tile.icon.color = tempAlpha;
+                }
+            }
+
+
+
+            if (_Selection.Count < 2) return;
+
+            Debug.Log($"Selected 2 Tiles @ ({_Selection[0].x}, {_Selection[0].y}) and ({_Selection[1].x}, {_Selection[1].y}) ");
+
+            await Swap(_Selection[0], _Selection[1]);
+
+
+            if (CanPop())  //Checks to see if it can be "popped" 
+            {
+                Pop();
+
+                //moveCount += 1; //adds one to the moveCount var
+
+                //turn the swapSwitch back to true
+                swapSwitch = true;
+
             }
             else
             {
-                _Selection.Add(tile);
-                //making the tile the selectedColor
-                //tile.icon.color.a = 0.75f;
-                //var tempAlpha = tile.icon.color;
-                //tempAlpha.a = 0.75f;
-                //tile.icon.color = tempAlpha;
+                //turning the swapSwitch back to true if there is no Pop
+                swapSwitch = true;
             }
-        }
-
-        if (_Selection.Count < 2) return;
-
-        Debug.Log($"Selected 2 Tiles @ ({_Selection[0].x}, {_Selection[0].y}) and ({_Selection[1].x}, {_Selection[1].y}) ");
-
-        await Swap(_Selection[0], _Selection[1]);
 
 
-        if (CanPop())  //Checks to see if it can be "popped" 
-        {
-            Pop();
+            //removing else since players can swap and not create a match
+            /*else
+            {
+                await Swap(_Selection[0], _Selection[1]); //Swaps back if no match is made 
+                //clear the _Selection list
+                _Selection.Clear();
 
-            //moveCount += 1; //adds one to the moveCount var
+            }*/
 
-            
-           
-        }
 
-        //removing else since players can swap and not create a match
-        /*else
-        {
-            await Swap(_Selection[0], _Selection[1]); //Swaps back if no match is made 
-            //clear the _Selection list
+            _Selection[0].icon.color = notSelectedColor;
+            _Selection[1].icon.color = notSelectedColor;
             _Selection.Clear();
-            
-        }*/
+            moveCount += 1; //adds one to the moveCount var
 
+            //may have to move where this checks if it sends player to retry scence before winning and going to next dialouge
 
-        //_Selection[0].icon.color = notSelectedColor;
-        //_Selection[1].icon.color = notSelectedColor;
-        _Selection.Clear();
-        moveCount += 1; //adds one to the moveCount var
-
-        //may have to move where this checks if it sends player to retry scence before winning and going to next dialouge
-
-        if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
-        {
-            Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
+            if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
+            {
+                Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
+            }
         }
     }
 
@@ -280,6 +331,9 @@ public sealed class Board : MonoBehaviour
 
     public async Task Swap(Tile tile1, Tile tile2) //Method that implements the tile "swap" animation
     {
+        //turning off the swapSwitch bool
+        swapSwitch = false;
+
         var icon1 = tile1.icon;
         var icon2 = tile2.icon;
 
@@ -328,7 +382,7 @@ public sealed class Board : MonoBehaviour
                 }
                 
         return false;
-      
+        
     }
    private async void Pop() //Removes icons from grid when matched 
     {
@@ -400,6 +454,8 @@ public sealed class Board : MonoBehaviour
 
                     x = 0;
                     y = 0;  //Reset
+
+                    swapSwitch = true;
                 }
                  
             }

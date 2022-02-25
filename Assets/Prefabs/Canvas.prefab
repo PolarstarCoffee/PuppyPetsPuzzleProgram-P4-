@@ -402,6 +402,8 @@ MonoBehaviour:
   matchType: 0
   matchAmount: 0
   levelIndex: 2
+  selectedColor: {r: 0.27621174, g: 0.8773585, b: 0.120016046, a: 1}
+  notSelectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1302335502391210707
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,11 +552,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63742c40c8d57349871fa4c82013630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveGoal: 3
-  dogsMatched: 0
-  catsMatched: 0
-  birdsMatched: 0
-  obstaclesMatched: 0
+  objectiveGoalOne: 0
+  objectiveGoalTwo: 0
+  objectiveGoalThree: 0
+  objectiveGoalFour: 0
+  shabMatched: 0
+  puraMatched: 0
+  baudMatched: 0
+  bnanMatched: 0
+  baudTotal: 0
+  puraTotal: 0
+  bnanTotal: 0
+  shabTotal: 0
   boardObject: {fileID: 0}
   boardScript: {fileID: 0}
   objectiveDisplay: {fileID: 1302335502391210542}
