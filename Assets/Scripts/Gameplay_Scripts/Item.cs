@@ -13,8 +13,8 @@ public sealed class Item : ScriptableObject
 
     public Sprite sprite;
 
-    public Animation animation;
+    //public Animation animation;
 
-        
+    public ParticleSystem matchParticles;    
 
 }

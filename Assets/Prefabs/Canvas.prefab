@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Move Count
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+  m_sharedMaterial: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -203,7 +203,7 @@ Canvas:
   m_GameObject: {fileID: 1302335502027368008}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -398,12 +398,16 @@ MonoBehaviour:
   - {fileID: 8431612406185636554}
   - {fileID: 8431612407521736978}
   moveCount: 0
-  moveLimit: 4
+  moveLimit: 10
   matchType: 0
   matchAmount: 0
-  levelIndex: 2
+  levelIndex: 1
   selectedColor: {r: 0.27621174, g: 0.8773585, b: 0.120016046, a: 1}
   notSelectedColor: {r: 1, g: 1, b: 1, a: 1}
+  baudParticles: {fileID: 2983052947846687152, guid: c3a89d8b651c2694a89ea36005e8ce83, type: 3}
+  puraParticles: {fileID: 965649093721436532, guid: 2623d229ac6e11f42a62228311f98814, type: 3}
+  bnanParticles: {fileID: 8126850796049024460, guid: 77a1af2d29994e3409cfa05083b3827f, type: 3}
+  shabParticles: {fileID: 31734471121417831, guid: 2299fccb76043194c948dbeed787f8b5, type: 3}
 --- !u!1 &1302335502391210707
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,8 +477,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Objective Counter
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+  m_sharedMaterial: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -552,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63742c40c8d57349871fa4c82013630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveGoalOne: 0
+  objectiveGoalOne: 9
   objectiveGoalTwo: 0
   objectiveGoalThree: 0
   objectiveGoalFour: 0
@@ -636,8 +640,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score : 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
+  m_sharedMaterial: {fileID: -2793864418011925871, guid: 31e416656c09aa840aedc4e95fe51fe5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -661,7 +665,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 40.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1739,6 +1743,22 @@ PrefabInstance:
     - target: {fileID: 1024040759199040124, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901993456066075636, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901993456066075636, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.08627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901993456066075636, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.4666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901993456066075636, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.6117647
       objectReference: {fileID: 0}
     - target: {fileID: 4272534427981277122, guid: 52e6fbffccf551340b828d424ca021ed, type: 3}
       propertyPath: m_AnchorMax.y

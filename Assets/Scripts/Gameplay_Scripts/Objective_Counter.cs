@@ -87,7 +87,7 @@ public class Objective_Counter : MonoBehaviour
         //level two objective, count obstacles 'cleared'
         if (boardScript.levelIndex == 2)
         {
-            if (boardScript.matchType != -1)
+            if (boardScript.matchType == 2)
             {
                 puraMatched += boardScript.matchAmount;
                 Debug.Log(puraMatched + "/" + objectiveGoalOne);
@@ -107,7 +107,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Bnan Matched";
         }
 
 
@@ -115,7 +115,7 @@ public class Objective_Counter : MonoBehaviour
         //level three objective, count cats matched (type = 1)
         if (boardScript.levelIndex == 3)
         {
-            if (boardScript.matchType != -1)
+            if (boardScript.matchType == 1)
             {
                 puraMatched += boardScript.matchAmount;
                 Debug.Log(puraMatched + "/" + objectiveGoalOne);
@@ -135,7 +135,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pura Matched";
         }
 
 
@@ -143,7 +143,7 @@ public class Objective_Counter : MonoBehaviour
         //level four objective, count obstacles 'cleared' (type = 4)
         if (boardScript.levelIndex == 4)
         {
-            if (boardScript.matchType != -1)
+            if (boardScript.matchType == 0)
             {
                 puraMatched += boardScript.matchAmount;
                 Debug.Log(puraMatched + "/" + objectiveGoalOne);
@@ -163,14 +163,14 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Baud Matched";
         }
 
 
         //level five objective, count dogs matched (type = 3)
         if (boardScript.levelIndex == 5)
         {
-            if (boardScript.matchType != -1)
+            if (boardScript.matchType == 3)
             {
                 puraMatched += boardScript.matchAmount;
                 Debug.Log(puraMatched + "/" + objectiveGoalOne);
@@ -190,7 +190,7 @@ public class Objective_Counter : MonoBehaviour
             }
 
             //display the amount of objective matches
-            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Pets Matched";
+            objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Shab Matched";
         }
 
         //test Check if the matchType int value is 0 (the bird's Type value), if so add the matched amount of bird tiles to the counter

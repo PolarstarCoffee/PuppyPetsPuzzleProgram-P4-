@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &193276488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 337.83566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 192.5557
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.092355
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260718, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_Name
+      value: Camera UI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+--- !u!20 &197406826 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8707835914916260624, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+  m_PrefabInstance: {fileID: 193276488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321066643
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,13 +435,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502027368007, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 197406826}
     - target: {fileID: 1302335502027368008, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: moveLimit
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: levelIndex
@@ -459,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502391210705, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: objectiveGoalOne
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_fontSize

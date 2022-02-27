@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502027368007, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1917945304}
     - target: {fileID: 1302335502027368008, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -339,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502391210705, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: objectiveGoalOne
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1302335502434798390, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_fontSize
@@ -1092,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1525010654
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1159,3 +1163,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1917945304 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8707835914916260624, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+  m_PrefabInstance: {fileID: 1921958633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1921958633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 337.83566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 192.5557
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.092355
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260625, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260718, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_Name
+      value: Camera UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707835914916260718, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}

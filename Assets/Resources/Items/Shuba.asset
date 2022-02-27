@@ -15,3 +15,4 @@ MonoBehaviour:
   value: 10
   type: 3
   sprite: {fileID: 21300000, guid: e25719d528a3c4f4bbdf67c10d1b6423, type: 3}
+  matchParticles: {fileID: 31734471121417831, guid: 2299fccb76043194c948dbeed787f8b5, type: 3}

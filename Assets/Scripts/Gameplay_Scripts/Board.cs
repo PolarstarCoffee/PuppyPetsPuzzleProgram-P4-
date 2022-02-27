@@ -51,8 +51,22 @@ public sealed class Board : MonoBehaviour
     private bool swapSwitch = true;
 
 
+    //particles
+    public ParticleSystem baudParticles;
+    public ParticleSystem puraParticles;
+    public ParticleSystem bnanParticles;
+    public ParticleSystem shabParticles;
+
+    //sound effects
+    public AudioClip swapSound;
+    public AudioClip popSound;
+
+
     private void Start()
     {
+
+        
+
         //creating width and length of the board, storing it in the Tiles array from 0,0 to 4,4
         Tiles = new Tile[rows.Max(selector: row => row.tiles.Length), rows.Length];
 
@@ -126,12 +140,12 @@ public sealed class Board : MonoBehaviour
             rows[1].tiles[3].Item = Item_Database.Items[1];
 
             rows[3].tiles[1].Item = Item_Database.Items[0];
-            rows[3].tiles[3].Item = Item_Database.Items[3];
+            rows[3].tiles[3].Item = Item_Database.Items[2];
             rows[3].tiles[4].Item = Item_Database.Items[0];
             
 
-            rows[4].tiles[0].Item = Item_Database.Items[3];
-            rows[4].tiles[1].Item = Item_Database.Items[3];
+            rows[4].tiles[0].Item = Item_Database.Items[2];
+            rows[4].tiles[1].Item = Item_Database.Items[2];
             rows[4].tiles[4].Item = Item_Database.Items[0];
             
             
@@ -160,24 +174,46 @@ public sealed class Board : MonoBehaviour
             //place tiles for level five
 
             //icons
+            rows[0].tiles[0].Item = Item_Database.Items[0];
+            rows[0].tiles[4].Item = Item_Database.Items[0];
             rows[0].tiles[1].Item = Item_Database.Items[3];
-            rows[0].tiles[2].Item = Item_Database.Items[0];
             rows[0].tiles[3].Item = Item_Database.Items[3];
 
-            rows[1].tiles[1].Item = Item_Database.Items[3];
-            rows[1].tiles[3].Item = Item_Database.Items[3];
+            rows[1].tiles[1].Item = Item_Database.Items[0];
+            rows[1].tiles[3].Item = Item_Database.Items[0];
+            rows[1].tiles[0].Item = Item_Database.Items[3];
+            rows[1].tiles[4].Item = Item_Database.Items[3];
 
-            rows[3].tiles[1].Item = Item_Database.Items[0];
-            rows[3].tiles[3].Item = Item_Database.Items[0];
+            rows[3].tiles[0].Item = Item_Database.Items[0];
+            rows[3].tiles[2].Item = Item_Database.Items[0];
+            rows[3].tiles[4].Item = Item_Database.Items[0];
 
-            rows[4].tiles[1].Item = Item_Database.Items[0];
-            rows[4].tiles[2].Item = Item_Database.Items[3];
-            rows[4].tiles[3].Item = Item_Database.Items[0];
-            
+            rows[4].tiles[0].Item = Item_Database.Items[0];
+            rows[4].tiles[2].Item = Item_Database.Items[0];
+            rows[4].tiles[4].Item = Item_Database.Items[0];
+            rows[4].tiles[1].Item = Item_Database.Items[3];
+            rows[4].tiles[3].Item = Item_Database.Items[3];
+
         }
         else if (levelIndex == 5)
         {
+            rows[0].tiles[0].Item = Item_Database.Items[3];
+            rows[0].tiles[2].Item = Item_Database.Items[3];
+            rows[0].tiles[4].Item = Item_Database.Items[3];
 
+            rows[1].tiles[2].Item = Item_Database.Items[3];
+
+            rows[2].tiles[0].Item = Item_Database.Items[3];
+            rows[2].tiles[1].Item = Item_Database.Items[3];
+            rows[2].tiles[3].Item = Item_Database.Items[3];
+            rows[2].tiles[4].Item = Item_Database.Items[3];
+
+            rows[3].tiles[2].Item = Item_Database.Items[3];
+
+            rows[4].tiles[0].Item = Item_Database.Items[3];
+            rows[4].tiles[1].Item = Item_Database.Items[3];
+            rows[4].tiles[3].Item = Item_Database.Items[3];
+            rows[4].tiles[4].Item = Item_Database.Items[3];
         }
 
 
@@ -410,6 +446,42 @@ public sealed class Board : MonoBehaviour
                     var deflateSequence = DOTween.Sequence(); //Intialize pop sequence 
 
                     foreach (var connectedTile in connectedTiles) deflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration)); //Pop sequence using DOTween
+
+                    //play VFX particles
+                    if (tile.Item.type == 0)
+                    {
+                        foreach (var connectedTile in connectedTiles)
+                        {
+                            Instantiate(baudParticles, connectedTile.transform.position, connectedTile.transform.rotation);
+                            //tile.Item.matchParticles.Play();
+                        }
+
+                    }
+                    else if (tile.Item.type == 1)
+                    {
+                        foreach (var connectedTile in connectedTiles)
+                        {
+                            Instantiate(puraParticles, connectedTile.transform.position, connectedTile.transform.rotation);
+                            //tile.Item.matchParticles.Play();
+                        }
+                    }
+                    else if (tile.Item.type == 2)
+                    {
+                        foreach (var connectedTile in connectedTiles)
+                        {
+                            Instantiate(bnanParticles, connectedTile.transform.position, connectedTile.transform.rotation);
+                            //tile.Item.matchParticles.Play();
+                        }
+                    }
+                    else if (tile.Item.type == 3)
+                    {
+                        foreach (var connectedTile in connectedTiles)
+                        {
+                            Instantiate(shabParticles, connectedTile.transform.position, connectedTile.transform.rotation);
+                            //tile.Item.matchParticles.Play();
+                        }
+                    }
+
 
                     //making connectedObstableTiles also animate
                     //foreach (var connectedObstacleTile in connectedObstacleTiles) deflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.zero, TweenDuration)); 
