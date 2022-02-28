@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     
 
 {
-    
+    public GameObject IconSelection;
     public TMP_Text dialogueText; //refrence to display actual text
     private Queue<string> sentences; //FIFO (First in first out data structure) private might need to be changed to public later to use it on other levels (if that's how that works lmao)
     
@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     {
       
         sentences = new Queue<string>(); //Initalizes Queue
+        IconSelection.SetActive(false);
     }
 
     public void StartDialogue (Dialogue dialogue) //Begins Dialogue 
@@ -56,24 +57,37 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         Debug.Log("Ending Conversation");
         dialogueText.text = sentence;
+        if (SceneManager.GetActiveScene().name == "Dialouge_1")
+        {
+            if (sentences.Count == 2) //Once there are 2 sentences left in the queue, the icon will appear within Dialogue scene 1
+            {
+                IconSelection.SetActive(true);
+               
+            }
 
-    }
+        }
 
     void EndDialogue() //Signifies the end of the Dialogue 
     {
         Debug.Log("End of Conversation");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        if (SceneManager.GetActiveScene().buildIndex == 13) //if the build index is at our tutorial level start level 1
-        {
-            SceneManager.LoadScene("Level01_Prototype");
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       // if (SceneManager.GetActiveScene().buildIndex == 13) //if the build index is at our tutorial level start level 1
+       // {
+           // SceneManager.LoadScene("Level01_Prototype");
+       // }
+       // else
+        //{
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+       // }
+    }
+ 
+    //public void IconPictureReveal()
+    {
+        
 
         }
     }
- 
 
   
 }

@@ -357,10 +357,16 @@ public sealed class Board : MonoBehaviour
 
             if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
             {
-                Debug.Log("moveCount has reached moveLimit"); //implement a scene index, sending the player to a end/retry scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Boots player to end scene on moveCount Limit reached (EDIT 2/12/22: Moved onto next scene in build index.)
+                Debug.Log("moveCount has reached moveLimit"); //indicates to restart the level 
+                Invoke("Restart", 2f);
             }
         }
+    }
+ 
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

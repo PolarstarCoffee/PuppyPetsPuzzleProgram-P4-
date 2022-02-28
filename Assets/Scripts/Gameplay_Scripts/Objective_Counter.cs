@@ -246,10 +246,10 @@ public class Objective_Counter : MonoBehaviour
         }
 
         //If ANY of the totals are less than 2, send to retry scene
-        if (baudTotal <= 2 || puraTotal <= 2 || bnanTotal <= 2 || shabTotal <= 2)
+        //if (baudTotal <= 2 || puraTotal <= 2 || bnanTotal <= 2 || shabTotal <= 2)
         {
-            Debug.Log("Softlock Reset");
-        }
+            //Debug.Log("Softlock Reset");
+                    }
 
         
 

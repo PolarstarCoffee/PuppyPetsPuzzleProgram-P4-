@@ -20,8 +20,7 @@ public class MainMenuFunctions : MonoBehaviour
         SceneManager.LoadScene("Tutorial_Scene1");
     }
 
-
-
+    
 
 
 
