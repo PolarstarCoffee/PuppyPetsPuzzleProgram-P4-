@@ -133,22 +133,13 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_IsActive: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -200,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -194.4, y: -76.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642821755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.9, y: 164.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,6 +373,11 @@ Transform:
 --- !u!20 &1971640128 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8707835914916260624, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+  m_PrefabInstance: {fileID: 8707835913515580496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1971640129 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1971640129, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
   m_PrefabInstance: {fileID: 8707835913515580496}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1302335501711623342
@@ -483,6 +479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: cameraListener
+      value: 
+      objectReference: {fileID: 1971640129}
     - target: {fileID: 1302335502314575958, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

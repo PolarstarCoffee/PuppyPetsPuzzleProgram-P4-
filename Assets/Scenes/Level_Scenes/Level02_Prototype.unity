@@ -305,6 +305,10 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1302335502314575952, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
+      propertyPath: cameraListener
+      value: 
+      objectReference: {fileID: 1921958634}
     - target: {fileID: 1302335502314575958, guid: abf9c566b21642f4e8b84dad44fed05a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1089,22 +1093,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1525010656}
   - component: {fileID: 1525010655}
-  - component: {fileID: 1525010654}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &1525010654
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525010653}
-  m_Enabled: 1
+  m_IsActive: 1
 --- !u!20 &1525010655
 Camera:
   m_ObjectHideFlags: 0
@@ -1229,3 +1224,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+--- !u!82 &1921958634 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1971640129, guid: b8afdd9d494c1274dabbd4cf6ea2847c, type: 3}
+  m_PrefabInstance: {fileID: 1921958633}
+  m_PrefabAsset: {fileID: 0}

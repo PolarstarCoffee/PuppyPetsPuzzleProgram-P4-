@@ -408,6 +408,10 @@ MonoBehaviour:
   puraParticles: {fileID: 965649093721436532, guid: 2623d229ac6e11f42a62228311f98814, type: 3}
   bnanParticles: {fileID: 8126850796049024460, guid: 77a1af2d29994e3409cfa05083b3827f, type: 3}
   shabParticles: {fileID: 31734471121417831, guid: 2299fccb76043194c948dbeed787f8b5, type: 3}
+  swapSound: {fileID: 8300000, guid: 1c937eaa5e9cab64e9d693ce6b2a7223, type: 3}
+  popSound: {fileID: 8300000, guid: 6d67ebeb4df92744eadb13e4b93eed7f, type: 3}
+  cameraListener: {fileID: 0}
+  volumeSFX: 3
 --- !u!1 &1302335502391210707
 GameObject:
   m_ObjectHideFlags: 0

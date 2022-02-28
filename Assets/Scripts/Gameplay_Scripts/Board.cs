@@ -61,6 +61,9 @@ public sealed class Board : MonoBehaviour
     public AudioClip swapSound;
     public AudioClip popSound;
 
+    public AudioSource cameraListener;
+
+    public float volumeSFX;
 
     private void Start()
     {
@@ -347,7 +350,8 @@ public sealed class Board : MonoBehaviour
 
             }*/
 
-
+            //swapSound.
+            cameraListener.PlayOneShot(swapSound, volumeSFX);
             _Selection[0].icon.color = notSelectedColor;
             _Selection[1].icon.color = notSelectedColor;
             _Selection.Clear();
@@ -528,7 +532,9 @@ public sealed class Board : MonoBehaviour
                     }*/
                     
                     await inflateSequence.Play().AsyncWaitForCompletion();
-                    
+
+                    //sfx
+                    cameraListener.PlayOneShot(popSound, volumeSFX);
 
                     x = 0;
                     y = 0;  //Reset
