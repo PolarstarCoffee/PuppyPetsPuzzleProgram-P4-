@@ -1454,9 +1454,10 @@ MonoBehaviour:
     - As this is your first time here, I assume you don't know the drill. We here
       at Puppy Play Place ensure each and every animal has a happy home by the end
       of our shift.
-    - do you see the icons? select it with the left mouse click, to highlight that
-      tile.
-    - Then select any other tile to swap the position of the two. Making a string
-      of at least three adjacent pet tiles will result in a match! Making the animal
-      find its new place to call home!
-    - 'I think that''s all you need to know to get started! '
+    - Do you see the pet icons? select one with the left mouse click, to highlight
+      that tile.
+    - Then select any other tile with or without a pet to swap the position of the
+      two. Making a string of at least three adjacent pet tiles will result in a
+      match! Making the animal find its new place to call home!
+    - 'If you want to deselect the first pet tile you selected, press the space bar.
+      I think that''s all you need to know to get started! '
