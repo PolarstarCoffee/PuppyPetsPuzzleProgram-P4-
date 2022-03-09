@@ -1528,5 +1528,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shab Animated
       objectReference: {fileID: 0}
+    - target: {fileID: 5722150601218112360, guid: 1d880d874a23ab7408541bc86acf5885, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d880d874a23ab7408541bc86acf5885, type: 3}

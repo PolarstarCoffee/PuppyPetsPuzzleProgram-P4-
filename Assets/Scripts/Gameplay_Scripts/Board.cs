@@ -247,6 +247,11 @@ public sealed class Board : MonoBehaviour
             _Selection.Clear();
         }
 
+        if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
+        {
+            Debug.Log("moveCount has reached moveLimit"); //indicates to restart the level 
+            Invoke("Restart", 2f);
+        }
 
     }
 
@@ -363,16 +368,22 @@ public sealed class Board : MonoBehaviour
             _Selection[0].icon.color = notSelectedColor;
             _Selection[1].icon.color = notSelectedColor;
             _Selection.Clear();
-            moveCount += 1; //adds one to the moveCount var
+            
 
             //may have to move where this checks if it sends player to retry scence before winning and going to next dialouge
-
+            /*
             if (moveCount >= moveLimit) //check if player's moveCount is greater than the moveLimit, if so end the level 
             {
                 Debug.Log("moveCount has reached moveLimit"); //indicates to restart the level 
                 Invoke("Restart", 2f);
             }
+            */
+            //else if (moveCount < moveLimit)
+            //{
+            moveCount += 1; //adds one to the moveCount var
+            //}
 
+            
 
         }
     }
@@ -588,29 +599,29 @@ public sealed class Board : MonoBehaviour
         }
 
         //check for less than 2 total pets relating to each level
-        if (bnanTotal <= 2 && levelIndex == 2)
+        if (bnanTotal <= 2 && bnanTotal != 0 && levelIndex == 2)
         {
             Invoke("Restart", 1f);
         }
-        if (puraTotal <= 2 && levelIndex == 3)
+        if (puraTotal <= 2 && puraTotal != 0 && levelIndex == 3)
         {
             Invoke("Restart", 1f);
         }
-        if (baudTotal <= 2 && levelIndex == 4)
+        if (baudTotal <= 2 && baudTotal != 0 && levelIndex == 4)
         {
             Invoke("Restart", 1f);
         }
-        if (shabTotal <= 2 && levelIndex == 5)
+        if (shabTotal <= 2 && shabTotal != 0 && levelIndex == 5)
         {
             Invoke("Restart", 1f);
         }
 
 
         //reset counters
+        bnanTotal = 0;
+        puraTotal = 0;
         baudTotal = 0;
         shabTotal = 0;
-        puraTotal = 0;
-        bnanTotal = 0;
 
     }
 }

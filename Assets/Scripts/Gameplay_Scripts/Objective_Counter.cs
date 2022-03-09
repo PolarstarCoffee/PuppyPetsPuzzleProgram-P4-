@@ -261,7 +261,7 @@ public class Objective_Counter : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         timer = true;
     }
 }
