@@ -65,10 +65,16 @@ public sealed class Board : MonoBehaviour
 
     public float volumeSFX;
 
+    //pet icon totals
+    public int baudTotal;
+    public int shabTotal;
+    public int puraTotal;
+    public int bnanTotal;
+
     private void Start()
     {
 
-        
+
 
         //creating width and length of the board, storing it in the Tiles array from 0,0 to 4,4
         Tiles = new Tile[rows.Max(selector: row => row.tiles.Length), rows.Length];
@@ -136,7 +142,7 @@ public sealed class Board : MonoBehaviour
             rows[0].tiles[0].Item = Item_Database.Items[1];
             rows[0].tiles[3].Item = Item_Database.Items[2];
             rows[0].tiles[4].Item = Item_Database.Items[2];
-            
+
 
             rows[1].tiles[0].Item = Item_Database.Items[1];
             rows[1].tiles[1].Item = Item_Database.Items[2];
@@ -145,13 +151,13 @@ public sealed class Board : MonoBehaviour
             rows[3].tiles[1].Item = Item_Database.Items[0];
             rows[3].tiles[3].Item = Item_Database.Items[2];
             rows[3].tiles[4].Item = Item_Database.Items[0];
-            
+
 
             rows[4].tiles[0].Item = Item_Database.Items[2];
             rows[4].tiles[1].Item = Item_Database.Items[2];
             rows[4].tiles[4].Item = Item_Database.Items[0];
-            
-            
+
+
 
         }
         else if (levelIndex == 3)
@@ -226,7 +232,7 @@ public sealed class Board : MonoBehaviour
     }
 
 
-    
+
 
     private void Update()
     {
@@ -249,6 +255,8 @@ public sealed class Board : MonoBehaviour
     {
 
         notSelectedColor = tile.icon.color;
+
+
 
         if (swapSwitch == true)
         {
@@ -296,7 +304,7 @@ public sealed class Board : MonoBehaviour
                 }
                 else
                 {
-                    
+
                     _Selection.Add(tile);
                     //do not allow player to choose an empty space for their first selection
                     if (_Selection[0].Item == Item_Database.Items[4])
@@ -364,11 +372,13 @@ public sealed class Board : MonoBehaviour
                 Debug.Log("moveCount has reached moveLimit"); //indicates to restart the level 
                 Invoke("Restart", 2f);
             }
+
+
         }
     }
- 
 
-    void Restart()
+
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -410,7 +420,7 @@ public sealed class Board : MonoBehaviour
         tile2.Item = tile1Item;
 
 
-            
+
     }
 
     private bool CanPop() //Checks to see if it's a match 
@@ -426,15 +436,15 @@ public sealed class Board : MonoBehaviour
                     if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2) // && Tiles[x, y].Item.type != 4) //More than or equal to two equals a match: Will change later  
                         return true;
                 }
-                
+
         return false;
-        
+
     }
-   private async void Pop() //Removes icons from grid when matched 
+    private async void Pop() //Removes icons from grid when matched 
     {
-       for ( var y = 0; y < Height; y++ ) 
+        for (var y = 0; y < Height; y++)
         {
-            for ( var x = 0;x < Width; x++ )
+            for (var x = 0; x < Width; x++)
             {
                 //check to make sure the matched are not of item.type = 4 (obstacle)
                 if (Tiles[x, y].Item.type != 4)
@@ -447,11 +457,12 @@ public sealed class Board : MonoBehaviour
 
                     //var connectedObstacleTiles = tile.GetObstacleTiles();
                     //Debug.Log(connectedObstacleTiles.ToString());
-                    
+
+
                     if (connectedTiles.Skip(1).Count() < 2) continue; //If 3 tiles aren't connected, continue 
 
                     //making the connectedObstacleTiles be removed 
-                    
+
 
                     var deflateSequence = DOTween.Sequence(); //Intialize pop sequence 
 
@@ -504,7 +515,7 @@ public sealed class Board : MonoBehaviour
                     //get the Item Type which the connected tiles are
                     matchType = tile.Item.type;
 
-                    
+
                     //Debug.Log(matchType + "is the Item matched");
 
                     //getting the amount of tiles matched
@@ -530,25 +541,79 @@ public sealed class Board : MonoBehaviour
 
                         inflateSequence.Join(connectedObstacleTile.icon.transform.DOScale(Vector3.one, TweenDuration)); //actual code to animate in the repopulation utlilziing DOTween 
                     }*/
-                    
+
                     await inflateSequence.Play().AsyncWaitForCompletion();
 
                     //sfx
                     cameraListener.PlayOneShot(popSound, volumeSFX);
 
+                    //Reset
                     x = 0;
-                    y = 0;  //Reset
+                    y = 0;
 
+                    PetCounter();
                     swapSwitch = true;
                 }
-                 
+
             }
-        } 
+        }
 
     }
 
+    //ran after a Pop() to check if there is a 'softlock' 
+    public void PetCounter()
+    {
+        for (var y = 0; y < Height; y++)
+        {
+            for (var x = 0; x < Width; x++)
+            {
+                if (Tiles[x, y].Item == Item_Database.Items[0])
+                {
+                    baudTotal += 1;
+                }
+                else if (Tiles[x, y].Item == Item_Database.Items[1])
+                {
+                    puraTotal += 1;
+                }
+                else if (Tiles[x, y].Item == Item_Database.Items[2])
+                {
+                    bnanTotal += 1;
+                }
+                else if (Tiles[x, y].Item == Item_Database.Items[3])
+                {
+                    shabTotal += 1;
+                }
+            }
 
-} 
+        }
+
+        //check for less than 2 total pets relating to each level
+        if (bnanTotal <= 2 && levelIndex == 2)
+        {
+            Invoke("Restart", 1f);
+        }
+        if (puraTotal <= 2 && levelIndex == 3)
+        {
+            Invoke("Restart", 1f);
+        }
+        if (baudTotal <= 2 && levelIndex == 4)
+        {
+            Invoke("Restart", 1f);
+        }
+        if (shabTotal <= 2 && levelIndex == 5)
+        {
+            Invoke("Restart", 1f);
+        }
+
+
+        //reset counters
+        baudTotal = 0;
+        shabTotal = 0;
+        puraTotal = 0;
+        bnanTotal = 0;
+
+    }
+}
 
 
 

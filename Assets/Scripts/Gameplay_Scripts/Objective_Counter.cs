@@ -42,10 +42,10 @@ public class Objective_Counter : MonoBehaviour
         boardScript = boardObject.GetComponent<Board>();
 
         //first check what levelIndex the Board.cs is on to determine what level objectives are needed
-        if (boardScript.levelIndex == 1)
-        {
+        //if (boardScript.levelIndex == 1)
+        //{
             //
-        }
+        //}
 
     }
 
@@ -191,6 +191,7 @@ public class Objective_Counter : MonoBehaviour
 
             //display the amount of objective matches
             objectiveDisplay.text = puraMatched + "/" + objectiveGoalOne + " Shab Matched";
+
         }
 
         //test Check if the matchType int value is 0 (the bird's Type value), if so add the matched amount of bird tiles to the counter
@@ -216,40 +217,6 @@ public class Objective_Counter : MonoBehaviour
 
         //display the counters, HAVE TO CHANGE THE TYPE OF TILE MATCHED EVERY LEVEL (can be an if statement, if sceneIndex = 3, objCOunter = 5 and Type = bird)
         //objectiveDisplay.text = birdsMatched + "/" + objectiveGoal;
-
-
-        //checking if there are LESS THAN 2 OF ANY pet icons, since it results in a soft lock, if true, send to retry scene
-
-        for (var y = 0; y < boardScript.Height; y++)
-        {
-
-            for (var x = 0; x < boardScript.Width; x++)
-            {
-                //adding one to the baudTotal counter if the Item is Baud
-                if (boardScript.Tiles[x, y].Item == Item_Database.Items[0])
-                {
-                    baudTotal += 1;
-                }
-                else if (boardScript.Tiles[x, y].Item == Item_Database.Items[1])
-                {
-                    puraTotal += 1;
-                }
-                else if (boardScript.Tiles[x, y].Item == Item_Database.Items[2])
-                {
-                    bnanTotal += 1;
-                }
-                else if (boardScript.Tiles[x, y].Item == Item_Database.Items[3])
-                {
-                    shabTotal += 1;
-                }
-            }
-        }
-
-        //If ANY of the totals are less than 2, send to retry scene
-        //if (baudTotal <= 2 || puraTotal <= 2 || bnanTotal <= 2 || shabTotal <= 2)
-        {
-            //Debug.Log("Softlock Reset");
-                    }
 
         
 
