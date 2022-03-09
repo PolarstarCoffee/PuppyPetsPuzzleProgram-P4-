@@ -23,6 +23,7 @@ public class Objective_Counter : MonoBehaviour
     public int bnanTotal = 0;
     public int shabTotal = 0;
 
+    public bool timer = false;
 
     //counter for the current level objective
     //public int currentObjective = 0;
@@ -74,7 +75,15 @@ public class Objective_Counter : MonoBehaviour
                 //reset birdsMatched counter
                 //birdsMatched = 0;
                 //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                //start a waitforsceonds coroutine, used to make the last sfx play and then move into the next scene without breaking the music
+                StartCoroutine(Timer());
+                if (timer == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    timer = false;
+                }
+                
 
             }
 
@@ -102,7 +111,14 @@ public class Objective_Counter : MonoBehaviour
                 //reset birdsMatched counter
                 //birdsMatched = 0;
                 //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                StartCoroutine(Timer());
+                if (timer == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    timer = false;
+                }
+                
 
             }
 
@@ -130,7 +146,14 @@ public class Objective_Counter : MonoBehaviour
                 //reset birdsMatched counter
                 //birdsMatched = 0;
                 //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                StartCoroutine(Timer());
+                if (timer == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    timer = false;
+                }
+                
 
             }
 
@@ -158,7 +181,14 @@ public class Objective_Counter : MonoBehaviour
                 //reset birdsMatched counter
                 //birdsMatched = 0;
                 //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                StartCoroutine(Timer());
+                if (timer == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    timer = false;
+                }
+                
 
             }
 
@@ -185,7 +215,14 @@ public class Objective_Counter : MonoBehaviour
                 //reset birdsMatched counter
                 //birdsMatched = 0;
                 //go to the win scene/move to the next scene (dialouge or next level or win screen w/ score)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+                StartCoroutine(Timer());
+                if (timer == true)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    timer = false;
+                }
+                
 
             }
 
@@ -220,5 +257,11 @@ public class Objective_Counter : MonoBehaviour
 
         
 
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(2);
+        timer = true;
     }
 }

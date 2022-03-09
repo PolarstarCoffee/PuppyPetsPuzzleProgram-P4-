@@ -412,6 +412,10 @@ MonoBehaviour:
   popSound: {fileID: 8300000, guid: 6d67ebeb4df92744eadb13e4b93eed7f, type: 3}
   cameraListener: {fileID: 0}
   volumeSFX: 3
+  baudTotal: 0
+  shabTotal: 0
+  puraTotal: 0
+  bnanTotal: 0
 --- !u!1 &1302335502391210707
 GameObject:
   m_ObjectHideFlags: 0
