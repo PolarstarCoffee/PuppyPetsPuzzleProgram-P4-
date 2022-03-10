@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     
 
 {
-    public GameObject IconSelection;
+    //public GameObject IconSelection;
     public TMP_Text dialogueText; //refrence to display actual text
     private Queue<string> sentences; //FIFO (First in first out data structure) private might need to be changed to public later to use it on other levels (if that's how that works lmao)
     
@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     {
       
         sentences = new Queue<string>(); //Initalizes Queue
-        IconSelection.SetActive(false);
+        //IconSelection.SetActive(false);
     }
 
     public void StartDialogue (Dialogue dialogue) //Begins Dialogue 
@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (sentences.Count == 2) //Once there are 2 sentences left in the queue, the icon will appear within Dialogue scene 1
             {
-                IconSelection.SetActive(true);
+                //IconSelection.SetActive(true);
                
             }
 
