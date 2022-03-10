@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shab_Idle
+  m_Name: Shab Bounce
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24,7 +24,7 @@ AnimationClip:
     - time: 0.21666667
       value: {fileID: 21300000, guid: c5149931acfce1d42a136f83dc593a01, type: 3}
     - time: 0.41666666
-      value: {fileID: 21300000, guid: dc1aa6afa731c784a8ea8857656e1e51, type: 3}
+      value: {fileID: 21300000, guid: 8dd9eb36d3390fb458af55a66b296abe, type: 3}
     - time: 0.6333333
       value: {fileID: 21300000, guid: e7c6fc6108e3b744eafb3aba11c11e41, type: 3}
     - time: 0.8333333
@@ -50,7 +50,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: dc1aa6afa731c784a8ea8857656e1e51, type: 3}
     - {fileID: 21300000, guid: c5149931acfce1d42a136f83dc593a01, type: 3}
-    - {fileID: 21300000, guid: dc1aa6afa731c784a8ea8857656e1e51, type: 3}
+    - {fileID: 21300000, guid: 8dd9eb36d3390fb458af55a66b296abe, type: 3}
     - {fileID: 21300000, guid: e7c6fc6108e3b744eafb3aba11c11e41, type: 3}
     - {fileID: 21300000, guid: dc1aa6afa731c784a8ea8857656e1e51, type: 3}
   m_AnimationClipSettings:
