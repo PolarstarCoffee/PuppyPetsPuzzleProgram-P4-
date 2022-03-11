@@ -1420,8 +1420,9 @@ MonoBehaviour:
       of our shift.
     - Do you see the pet icons? select one with the left mouse click, to highlight
       that tile.
-    - Then select any other tile with or without a pet to swap the position of the
+    - Then select ANY OTHER TILE WITH OR WITHOUT A PET to swap the position of the
       two. Making a string of at least three adjacent pet tiles will result in a
       match! Making the animal find its new place to call home!
     - 'If you want to deselect the first pet tile you selected, press the space bar.
-      I think that''s all you need to know to get started! '
+      Try and get the amount of matches on the left side of the screen before your
+      use all your moves. I think that''s all you need to know to get started! '
